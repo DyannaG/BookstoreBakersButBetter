@@ -1,6 +1,8 @@
-package collection;
+package com.example.BookstoreBakersButBetter.collection;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -13,16 +15,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 @Setter
-public class reviewComments{
-    private static final java.lang.Object GenerationType = AUTO ;
+public class reviews{
+   // private static final java.lang.Object GenerationType = AUTO ;
     @Id
-    private String commentID;
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private String reviewID;
 
-    private tring bookID;
+
+    private String bookID;
     private String userID;
-    private String addComments;
+    private Float rating;
+    private String summary;
     private String datePosted;
-    private Integer commentLikes;
-    private Integer commentDislikes;
+    private Integer likes;
+    private Integer dislikes;
+    private String reviewTitle;
 }
+
