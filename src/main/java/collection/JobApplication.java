@@ -1,7 +1,7 @@
-package com.example.BookstoreBakersButBetter.collection;
+package collection;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -14,7 +14,7 @@ import java.io.File;
 
 public class JobApplication {
     @Id //primary key
-    @GeneratedValue(strategy = GenerationType.AUTO)
+ //   @GeneratedValue(strategy = GenerationType.AUTO)
     private String applicationID;
   //
 

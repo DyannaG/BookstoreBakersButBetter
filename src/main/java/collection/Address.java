@@ -1,7 +1,7 @@
-package com.example.BookstoreBakersButBetter.collection;
+package collection;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -10,7 +10,7 @@ import org.springframework.data.annotation.Id;
 // ^ research these
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private String addressID;
     // ^ primary id
     // V variables

@@ -1,6 +1,6 @@
-package com.example.BookstoreBakersButBetter.service.impl;
+package service.impl;
 
-import com.example.BookstoreBakersButBetter.service.UserService;
+import service.UserService;
 import org.apache.catalina.User;
 
 public class UserServiceImpl implements UserService {

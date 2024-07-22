@@ -1,6 +1,6 @@
-package com.example.BookstoreBakersButBetter.repository;
+package repository;
 
-import com.example.BookstoreBakersButBetter.collection.Address;
+import collection.Address;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

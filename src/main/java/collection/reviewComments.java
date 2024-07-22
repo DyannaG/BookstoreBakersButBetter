@@ -1,8 +1,8 @@
-package com.example.BookstoreBakersButBetter.collection;
+package collection;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class reviewComments{
  //   private static final java.lang.Object GenerationType = AUTO ;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+  //  @GeneratedValue(strategy = GenerationType.AUTO)
     private String commentID;
 
 
