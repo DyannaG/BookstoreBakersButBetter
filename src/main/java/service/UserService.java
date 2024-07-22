@@ -1,4 +1,4 @@
-package com.example.BookstoreBakersButBetter.service;
+package service;
 
 import org.apache.catalina.User;
 import org.springframework.stereotype.Service;

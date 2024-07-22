@@ -1,20 +1,22 @@
-package com.example.BookstoreBakersButBetter.model;
+package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import collection.Address;
+import collection.PaymentInfo;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 
-@Entity
+//@Entity
 @Getter
 @Setter
 public class user {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+  //  @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
 
     private String name;

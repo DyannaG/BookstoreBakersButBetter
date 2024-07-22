@@ -1,7 +1,6 @@
-package com.example.BookstoreBakersButBetter.repository;
+package repository;
 
-import com.example.BookstoreBakersButBetter.collection.reviewComments;
-import com.example.BookstoreBakersButBetter.collection.reviews;
+import collection.reviewComments;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
