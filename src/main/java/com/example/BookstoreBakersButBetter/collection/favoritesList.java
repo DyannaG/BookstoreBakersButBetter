@@ -1,4 +1,4 @@
-package com.example.BookstoreBakersButBetter.model;
+package com.example.BookstoreBakersButBetter.collection;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.example.BookstoreBakersButBetter.model;
+package com.example.BookstoreBakersButBetter.collection;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
