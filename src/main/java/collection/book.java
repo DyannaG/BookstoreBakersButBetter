@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
-@Document(collection = "book")
+@Document(collection = "Books")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
 @Setter
@@ -23,13 +23,28 @@ public class book {
   //  private static final java.lang.Object GenerationType = AUTO;
     @Id
   //  @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
+
     private String bookID;
-
-
     private String title;
-    private String publisher;
     private String author;
     private String publishDate;
-    private String genre;
+    private String publisher;
+    private String Genre;
+    private String description;
     private float price;
+
+  public book(String id, String bookID, String title, String author, String publishDate, String publisher, String Genre, String description, float price){
+    super();
+    this.title = title;
+    this.id = id;
+    this.author = author;
+    this.bookID = bookID;
+    this.Genre = Genre;
+    this.price = price;
+    this.publishDate = publishDate;
+    this.publisher = publisher;
+    this.description = description;
+
+  }
 }
