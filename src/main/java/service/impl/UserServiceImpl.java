@@ -1,7 +1,7 @@
 package service.impl;
 
-import service.UserService;
 import org.apache.catalina.User;
+import service.UserService;
 
 public class UserServiceImpl implements UserService {
     @Override
