@@ -1,19 +1,29 @@
-package service;
 
-
-import collection.User;
-import org.springframework.stereotype.Service;
+import collection.user;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import repository.UserRepository;
+@SpringBootApplication
+@EnableMongoRepositories(basePackageClasses = UserRepository.class)
+@ComponentScan(basePackages = {"my_package.infrastructure.mongo"})
 
-import java.util.List;
-
-@Service
-public class UserService {
+public interface UserService {
     private final UserRepository repository;
 
     public UserService(UserRepository repository) {
         this.repository = repository;
     }
+    //@Bean
+    public String printItemDetails(user item);
+
+    public void showAllUser();
+
+    void getUserById(Integer id);
+
+    void updateUsername(String username, String newName);
+
+
 
     public List<User> findAll() {
         return repository.findAll();
@@ -29,3 +39,7 @@ public class UserService {
     }
 }
 
+    void updateName(String name, String newName);
+
+    void deleteUser(Integer id);
+}

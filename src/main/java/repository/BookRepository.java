@@ -1,6 +1,5 @@
 package repository;
 
-import collection.Address;
 import collection.book;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
