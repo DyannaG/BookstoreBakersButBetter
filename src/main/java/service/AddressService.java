@@ -22,4 +22,6 @@ public interface AddressService {
     void updateStreetName(String street, String newName);
 
     void deleteAddress(String id);
+
+    void updateById(String newName, String id);
 }

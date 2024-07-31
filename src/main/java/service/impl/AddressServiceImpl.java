@@ -25,22 +25,24 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
 
     }
 
-//    Address addy = new Address("500", "cherrywood", "Dallas", "TX", 75081);
-//    Address addy2 = new Address("444", "cherrywood", "Dallas", "TX", 75081);
+    Address addy = new Address("500", "cherrywood", "Dallas", "TX", 75081);
+    Address addy2 = new Address("444", "cherrywood", "Dallas", "TX", 75081);
 
     @Override
     public void run(String... args) throws Exception {
-//        showAllAddress();
-//        System.out.println("running to create cherrywood");
-//        addressRepo.save(addy);
-//        addressRepo.save(addy2);
-//        System.out.println("created!");
-//        showAllAddress();
-//        updateStreetName("cherrywood", "Cherrywood Drive");
-//        showAllAddress();
-//        getAddressById("444");
-//        deleteAddress("444");
-//        showAllAddress();
+        showAllAddress();
+        System.out.println("running to create cherrywood");
+        addressRepo.save(addy);
+        addressRepo.save(addy2);
+        System.out.println("created!");
+        showAllAddress();
+      //  updateStreetName("cherrywood", "Cherrywood Drive");
+        updateById("Cherrywood Drive", "500");
+        showAllAddress();
+        getAddressById("444");
+        deleteAddress("444");
+        showAllAddress();
+
     }
 
     @Override
@@ -79,5 +81,24 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
     public void deleteAddress(String id){
         addressRepo.deleteById(id);
         System.out.println("item with id " + id + " deleted.");
+    }
+
+    @Override
+    public void updateById(String newName, String id) {
+        //String old = street;
+          //  System.out.println(addressRepo.findByIdForStreet(id, street));
+                    //.setStreet(newName);
+//        List<Address> list = addressRepo.findItemById(id);
+//
+//        list.forEach(item -> {item.setStreet(newName);});
+//
+//        List<Address> updated = addressRepo.saveAll(list);
+
+        Address temp = addressRepo.findItemById(id);
+        String oldStreet = temp.getStreet();
+        temp.setStreet(newName);
+        addressRepo.save(temp);
+        System.out.println("Successfully updated " + oldStreet + " to " + addressRepo.findItemById(id).getStreet());
+
     }
 }
