@@ -1,9 +1,12 @@
 
-import collection.user;
+import collection.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import repository.UserRepository;
+
+import java.util.List;
+
 @SpringBootApplication
 @EnableMongoRepositories(basePackageClasses = UserRepository.class)
 @ComponentScan(basePackages = {"my_package.infrastructure.mongo"})
@@ -15,7 +18,7 @@ public interface UserService {
         this.repository = repository;
     }
     //@Bean
-    public String printItemDetails(user item);
+    public String printItemDetails(User item);
 
     public void showAllUser();
 
@@ -25,16 +28,16 @@ public interface UserService {
 
 
 
-    public List<User> findAll() {
+    public default List<User> findAll() {
         return repository.findAll();
     }
-    public User add(User user) {
+    public default User add(User user) {
         return repository.save(user);
     }
-    public User update(User user) {
+    public default User update(User user) {
         return repository.save(user);
     }
-    public void delete(User user) {
+    public default void delete(User user) {
         repository.delete(user);
     }
 }
@@ -42,4 +45,4 @@ public interface UserService {
     void updateName(String name, String newName);
 
     void deleteUser(Integer id);
-}
+
