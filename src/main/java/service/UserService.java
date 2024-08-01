@@ -1,4 +1,5 @@
 
+
 import collection.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,9 +8,8 @@ import repository.UserRepository;
 
 import java.util.List;
 
-@SpringBootApplication
+
 @EnableMongoRepositories(basePackageClasses = UserRepository.class)
-@ComponentScan(basePackages = {"my_package.infrastructure.mongo"})
 
 public interface UserService {
     private final UserRepository repository;
@@ -45,4 +45,3 @@ public interface UserService {
     void updateName(String name, String newName);
 
     void deleteUser(Integer id);
-

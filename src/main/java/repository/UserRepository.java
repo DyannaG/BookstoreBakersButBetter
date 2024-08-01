@@ -1,3 +1,4 @@
+
 package repository;
 
 
@@ -23,3 +24,4 @@ public interface UserRepository extends MongoRepository<User,Integer> {
     List<User> findAllName(String name);
 
 }
+
