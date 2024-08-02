@@ -22,14 +22,14 @@ public class UserController {
         ResponseEntity<String> credentials= ResponseEntity.ok("Recieved");
         return credentials;
     }
-    @GetMapping("/User/Address")
-    @ResponseBody
-    public ResponseEntity<Address> AddressController(){
-        Address addy = new Address();
-
-        ResponseEntity<Address> address = ResponseEntity.ok(addy);
-        return ResponseEntity.ok(addy);
-
-    }
+//    @GetMapping("/User/Address")
+//    @ResponseBody
+//    public ResponseEntity<Address> AddressController(){
+//        Address addy = new Address();
+//
+//        ResponseEntity<Address> address = ResponseEntity.ok(addy);
+//        return ResponseEntity.ok(addy);
+//
+//    }
 }
 

@@ -20,7 +20,9 @@ public class User {
     @Id
   //  @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Include
-    private Integer ID;
+    private Integer id;
+
+    private String Addressid;
 
     private String name;
 
@@ -29,7 +31,6 @@ public class User {
     private String password;
 
    // private PaymentInfo paymentInfo;
-@Id
-    private String[] AddressID;
+
 
 }

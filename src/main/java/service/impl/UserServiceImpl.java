@@ -10,15 +10,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import repository.UserRepository;
-import service.UserService;
+
 
 
 import java.util.Arrays;
 import java.util.List;
 
 
-@EnableMongoRepositories(basePackageClasses = UserRepository.class)
-public class UserServiceImpl implements CommandLineRunner, UserService {
+//@EnableMongoRepositories(basePackageClasses = UserRepository.class)
+//public class UserServiceImpl implements CommandLineRunner, UserService {
 
 ////    @Override
 ////    public User create(User user) {
@@ -66,4 +66,4 @@ public class UserServiceImpl implements CommandLineRunner, UserService {
 //    public void deleteUser(Integer id) {
 //        userRepo.deleteById(id);
 //        System.out.println("item with id " + id + " deleted.");
-//    }
+   //}
