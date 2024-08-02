@@ -12,38 +12,42 @@ import service.AddressService;
 
 import java.util.List;
 
-@SpringBootApplication
+//  @SpringBootApplication
 @EnableMongoRepositories(basePackageClasses = AddressRepository.class)
 @ComponentScan(basePackages = {"my_package.infrastructure.mongo"})
-public class AddressServiceImpl implements CommandLineRunner, AddressService {
+public class AddressServiceImpl implements AddressService {
 
-    @Autowired
+ //   @Autowired
     AddressRepository addressRepo;
 
-    public static void main(String[] args) {
-        SpringApplication.run(AddressServiceImpl.class, args);
+    //   public static void main(String[] args) {
+    //       SpringApplication.run(AddressServiceImpl.class, args);
 
-    }
 
     Address addy = new Address("500", "cherrywood", "Dallas", "TX", 75081);
     Address addy2 = new Address("444", "cherrywood", "Dallas", "TX", 75081);
 
-    @Override
-    public void run(String... args) throws Exception {
-        showAllAddress();
-        System.out.println("running to create cherrywood");
-        addressRepo.save(addy);
-        addressRepo.save(addy2);
-        System.out.println("created!");
-        showAllAddress();
-      //  updateStreetName("cherrywood", "Cherrywood Drive");
-        updateById("Cherrywood Drive", "500");
-        showAllAddress();
-        getAddressById("444");
-        deleteAddress("444");
-        showAllAddress();
+//    @Override
+//        // public void run(String... args) throws Exception {
+//    showAllAddress();
+//        System.out.println("running to create cherrywood");
+//        addressRepo.save(addy);
+//        addressRepo.save(addy2);
+//        System.out.println("created!");
 
-    }
+//    showAllAddress();
+
+    //  updateStreetName("cherrywood", "Cherrywood Drive");
+//    updateById("Cherrywood Drive","500");
+//
+//    showAllAddress();
+//
+//    getAddressById("444");
+//
+//    deleteAddress("444");
+//
+//    showAllAddress();
+
 
     @Override
     public void showAllAddress() {
@@ -66,11 +70,13 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
     public void updateStreetName(String street, String newName) {
         List<Address> list = addressRepo.findAll(street);
 
-        list.forEach(item -> {item.setStreet(newName);});
+        list.forEach(item -> {
+            item.setStreet(newName);
+        });
 
         List<Address> updated = addressRepo.saveAll(list);
 
-        if(updated != null){
+        if (updated != null) {
             System.out.println("Successfully updated " + updated.size() + " items.");
         }
 
@@ -78,7 +84,7 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
     }
 
     @Override
-    public void deleteAddress(String id){
+    public void deleteAddress(String id) {
         addressRepo.deleteById(id);
         System.out.println("item with id " + id + " deleted.");
     }
@@ -86,8 +92,8 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
     @Override
     public void updateById(String newName, String id) {
         //String old = street;
-          //  System.out.println(addressRepo.findByIdForStreet(id, street));
-                    //.setStreet(newName);
+        //  System.out.println(addressRepo.findByIdForStreet(id, street));
+        //.setStreet(newName);
 //        List<Address> list = addressRepo.findItemById(id);
 //
 //        list.forEach(item -> {item.setStreet(newName);});
@@ -101,4 +107,5 @@ public class AddressServiceImpl implements CommandLineRunner, AddressService {
         System.out.println("Successfully updated " + oldStreet + " to " + addressRepo.findItemById(id).getStreet());
 
     }
+
 }
